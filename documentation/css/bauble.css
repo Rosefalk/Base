@@ -1,0 +1,143 @@
+
+.bauble-wrapper
+{
+	padding		: 0px;
+	position	: absolute;
+	z-index		: 100;
+	display		: none;
+}
+
+.bauble-body
+{
+	background-color: #FFF; 
+	color		: #000; 
+	/*border-radius: 5px;*/
+	position	: relative;
+	padding		: 8px;
+	/*border: 1px solid LightGrey ;*/
+}
+
+.bauble-arrow
+{
+	width		: 0px;
+	height		: 0px;
+	border-color	: #fff transparent transparent transparent;
+	border-style	: solid;
+	border-width	: 9px 9px 0px 9px;
+	position	: absolute;
+	right		: 9px;
+	bottom		: -9px;
+}
+
+.icon-file
+{
+	width: 48px;
+	height: 48px;
+	margin: auto;
+}
+
+.icon-description
+{
+	max-width: 75px;
+	margin: auto;
+	border: 1px dotted rgba(150,150,150,0.6);
+	line-height: 16px;
+	padding: 5%;
+	word-wrap: break-word;
+	border-radius: 3px;
+}
+
+
+.icon-wrapper
+{
+	padding: 10px;
+	overflow: hidden;
+	text-align: center;
+	float: left;
+	border-radius: 5px;
+}
+
+/* overview */
+.overviewUl
+{
+	overflow: hidden;
+	text-align: center;
+	list-style: none;
+	margin: 0px auto;
+	padding:0px;
+	border: none;
+}
+
+.overviewUl .overviewLI
+{
+	width: 15px;
+	height: 15px;
+	margin: 5px;
+	padding: 0px;
+	float: left;
+	background-color: #ccc;
+}
+
+.overviewLI
+{
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.overviewLISelected
+{
+	background-color: #333 !important;
+}
+
+.arrowsLeftClass
+{
+	width: 25px;
+	position: absolute;
+	top: 100px;
+	left: -20px;
+}
+.arrowsRightClass
+{
+	width: 25px;
+	position: absolute;
+	top: 100px;
+	right: -20px;
+	
+}
+/* -overview end */
+
+/* projectbox */
+.projectBox
+{
+	position: relative;
+	margin: 10px;
+	box-shadow: 5px 5px 5px 0px #888888;
+	-webkit-box-shadow: 5px 5px 5px 0px #888888;
+	float: left;
+}
+
+.projectBoxImage
+{
+	height: 68%;
+	background-repeat: no-repeat;
+}
+
+.projectBoxTitle
+{
+}
+
+.projectBoxContent
+{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 3% 3% 1% 3%;
+	line-height: 20px;
+}
+
+.line{
+	position:absolute;
+	background-color: #000;
+	z-index:1000;
+}
+/* -projectbox end */

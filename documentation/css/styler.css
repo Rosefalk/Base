@@ -1,0 +1,266 @@
+a{text-decoration: none;}
+
+@font-face
+{
+  font-family: Soho-pro;
+  src: url(../font/SohoPro-Regular.otf);
+}
+
+#cc-logo
+{
+	width						: 100%;
+	height						: 93px;
+	background-color	: #FFF;
+	background-image	: url(../images/otilogo.png);
+	text-align				: center;
+	margin-bottom		: 10px;
+}
+
+button
+{
+  width: 30px;
+}
+
+h3
+{
+  padding: 10px;
+  margin: 0px;
+  background-color: #444;
+  color: #fff;
+}
+
+body
+{
+  background-image: url("../images/noiseLight.png");
+  font-family: verdana, sans-serif;
+  font-size: 11px;
+}
+
+
+.bold
+{
+  font-weight: bold;
+}
+#wrapper
+{
+  width: 900px;
+  margin: auto;
+}
+
+button
+{
+  padding: 5px 10px 5px 10px !important;
+  margin-top: 10px;
+}
+
+ul
+{
+  margin-top: 0px;
+  border: 1px solid grey;
+  background-color: #FFF;
+}
+li
+{
+  float: left;
+  margin: 0px 10px;
+  padding:5px;
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+#wrapper > ul > li:hover
+{
+  /*background-color: #eee;*/
+  box-shadow: 0px 0px 15px #bbb; /*#C6168D*/
+}
+/*classes*/
+
+.rightie
+{
+  float: right;
+}
+
+.container
+{
+  width: 246px;
+  height: 346px;
+  float: left;
+  border: 2px solid #fff;
+  background-color: #abc;
+  color: #fff;
+  font-size: 45px;
+  /*background-image: url("../images/page.jpg");*/
+}
+
+.scrollWrapper
+{
+  height: 350px;
+  width: 250px;
+  background-color: #666;
+  border: 1px solid #aaa;
+  overflow: hidden;
+}
+
+.scroller
+{
+  height: 100%;
+  width: 5000px;
+}
+
+.small
+{
+  width: 100px;
+}
+
+.smaller
+{
+  width: 50px;
+}
+
+.higher
+{
+  height: 270px;
+}
+
+.wide
+{
+  width: 800px;
+  height: 150px;
+}
+
+.cube
+{
+  width: 150px;
+  height: 150px;
+}
+
+.xtra-margin
+{
+  margin: 0px 10px 0px 10px;
+}
+
+.xtra-margin-half
+{
+  margin: 0px 10px 0px 10px;
+}
+
+.wider
+{
+  width: 532px;
+}
+
+.super-wide
+{
+  width: 835px;
+}
+
+.marginSpace
+{
+  width: 270px;
+}
+
+.bauble
+{
+  width: 150px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: #abc;
+}
+.baubleMini
+{
+  width: 75px;
+  height: 50px;
+  padding: 10px;
+  margin: 10px 5px auto auto;
+  background-color: #abc;
+}
+
+.display
+{
+  overflow: hidden;
+  padding: 10px;
+}
+
+.example-code
+{
+  display: none;
+}
+
+.dialog-text
+{
+  font-size: 20px;
+}
+
+/*ID's*/
+
+
+
+#baubleList
+{
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#baubleList li
+{
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.navButton
+{
+  width: 50px;
+  height: 100px;
+  background-color: #666;
+}
+
+.doc li
+{
+  width: 100%;
+  margin:15px;
+}
+
+.doc li h4
+{
+  background-color: #006782;
+  color: #fff;
+  padding: 10px;
+}
+
+.documentation
+{
+  width: 850px;
+  height: 45px;
+  overflow: hidden;
+}
+
+.docHeader
+{
+  background-color: #006782;
+  cursor: pointer;
+}
+
+#addDialogue
+{
+  width: 350px ;
+}
+
+.wideDisplay{
+  width: 100%;
+}
+
+#line
+{
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  background-color: #000;
+  border-radius: 20px;
+}
+
+#createLine{
+  width: auto;
+}

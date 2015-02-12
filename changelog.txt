@@ -1,0 +1,35 @@
+v.1.0.6: 07-10-2013
+• added lines, still is progress, but base functionality should work - look in source code for undocumented features
+
+v.1.0.5: 07-10-2013
+• fixed several minor issues
+• fixed removal of overview not working right
+• added arrows to slider and arrowfade
+• updated documentation
+• still needs some work, bt I'm overall happy with it now! :)
+
+v.1.0.4: 14-06-2013
+• fixed another bug that caused the scroller to ignore margins
+• added projectboxes
+• added goto click to overview
+
+v.1.0.3: 03-01-2013
+• fixed a bug causing the scroller to behave irregularely
+  when positioned.
+• fixed an unfathomable amount of smaller issues
+• added some unfinished features, they're not listed in the
+  doc and may not work well
+  
+v.1.0.2: 20-07-2012
+• added overviewAddTo and fixed an error in the bauble.css
+  ignoring custom overviewLI classes
+
+v.1.0.1: 16-07-2012
+• IE bugfixes have been made - primarely adressing the
+  overview for the rSlider not displaying correctly.
+• Other general bugfixes have also been applied.
+• Layout tweaked slightly.
+• Changelog added.
+
+v.1.0: 15-07-2012
+• Release of base plugin.

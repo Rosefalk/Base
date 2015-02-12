@@ -1,0 +1,12 @@
+This work is licensed under a Creative Commons Attribution Share-Alike [3.0] License.
+Creative Commons Attribution Share-Alike (cc-by-sa)
+
+link: http://creativecommons.org/licenses/by-sa/3.0/
+
+The Creative Commons Attribution Share-Alike license allows re-distribution and re-use of a 
+licensed work on the conditions that the creator is appropriately credited and that any 
+derivative work is made available under “the same, similar or a compatible license”.
+
+Author: 
+Thomas S.P. Rosefalk - www.rosefalk.dk
+With kind permission from Oticon A/S

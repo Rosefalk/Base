@@ -1,0 +1,800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+	<head>
+		<title>Rosefalk.dk jQuery Base Plugin</title>
+		<meta http-equiv="Content-Type" content="text/xhtml; charset= iso-8859-1" />
+		<meta name="description" content="base library" />
+		<meta name="keywords" content="rosefalk, rosefalk.dk, jquery, base, library" />
+		<link type="text/css" rel="stylesheet" href="css/ui-smoothness/jquery-ui-1.8.21.css" />
+		<link type="text/css" rel="stylesheet" href="css/styler.css" />
+		<link type="text/css" rel="stylesheet" href="css/bauble.css" />
+		
+		<script type="text/javascript" src="javascript/jquery/jquery-1.7.2.min.js"></script>
+  		<script type="text/javascript" src="javascript/jquery/jquery-ui-1.8.21.min.js"></script>
+  		<script type="text/javascript" src="javascript/jquery/TweenMax.min.js"></script>
+  		<script type="text/javascript" src="javascript/jquery/ScrollToPlugin.min.js"></script>
+  		<script type="text/javascript" src="javascript/jquery/jquery-base.1.0.6.js"></script>
+		
+		
+		<script type="text/javascript">
+			$("document").ready(function()
+			{
+				var control = false;
+				$("body").keydown(function(event)
+				{
+					if(event.which==17)
+					{
+						$("body").css({backgroundImage: "url(images/noiseDark.png)"});
+						control = true;
+					}
+				});
+				$("body").keyup(function(event)
+				{
+					if(event.which==17)
+					{
+						$("body").css({backgroundImage: "url(images/noiseLight.png)"});
+						control = false;
+					}
+				});
+				
+				$(".display li").bind('click', function(e)
+				{
+					if(control)
+					{
+						
+						$("body").createDialog({title: "Example Code",content:$(this).children(".example-code").html(), objClass:"dialog-text"});
+					}
+				});
+				
+				
+				$(".docHeader").click(function ()
+				{
+					if ($(this).parent().css("height") == "45px")
+					{
+						$(this).parent().css({height: "auto"});
+					}
+					else
+					{
+						$(this).parent().animate({height: 45}, 400);
+					}
+				});
+
+				
+				
+				$("#test").rSlide({endBack:true, backSpeed:1500});
+				$("#test2").rSlide({trim:true});
+				$("#test3").rSlide({overview:true, arrows:true, arrowsFade:true});
+				$("#test5").rSlide({speed:800, easing:"easeOutCubic"});
+							
+				$("#testRight").bind('click', function()
+				{
+					$("#test").rSlide({direction:"right"});
+				});
+
+				$("#testLeft").bind('click', function()
+				{
+					$("#test").rSlide({direction:"left"});
+				});
+ 						
+				$("#testRight1").bind('click', function()
+				{
+					$("#test1").rSlide({direction:"right"});
+				});
+
+				$("#testLeft1").bind('click', function()
+				{
+					$("#test1").rSlide({direction:"left"});
+				});
+				$("#testRight2").bind('click', function()
+				{
+					$("#test2").rSlide({direction:"right"});
+				});
+				
+				$("#testLeft2").bind('click', function()
+				{
+					$("#test2").rSlide({direction:"left"});
+				});
+							
+				$("#testRight3").bind('click', function()
+				{
+					$("#test3").rSlide({direction:"right", includeMargin:true});
+				});
+				
+				$("#testLeft3").bind('click', function()
+				{
+					$("#test3").rSlide({direction:"left"});
+				});
+							
+				$("#testRight4").bind('click', function()
+				{
+					$("#test4").rSlide({direction:"right"});
+				});
+				
+				$("#testLeft4").bind('click', function()
+				{
+					$("#test4").rSlide({direction:"left"});
+				});
+						
+				$("#testRight5").bind('click', function()
+				{
+					$("#test5").rSlide({direction:"right"});
+				});
+				
+				$("#testLeft5").bind('click', function()
+				{
+					$("#test5").rSlide({direction:"left"});
+				});
+				
+				
+				$("#baubleTop").bauble({x:18,direction: "top", align: "top"});
+				$("#baubleRight").bauble({align: "right", direction: "right"});
+				$("#baubleBot").bauble({x:18});
+				$("#baubleLeft").bauble({y:18,direction: "left", align: "left"});
+				$("#baubleInvert").bauble({direction: "bottom", align: "top", color:"#fff", x:75, flip: true});
+				$("#baubleInvert").bauble({direction: "left", align: "right", color:"#fff", y:50, flip: true});
+				$("#baubleInvert").bauble({direction: "top", align: "bottom", color:"#fff", x:75, flip: true});
+				$("#baubleInvert").bauble({direction: "right", align: "left", color:"#fff", y:50, flip: true});
+				$("#baublePerm").bauble({permanent: false});
+				
+				$("#baubleMini1").bauble({align: "left", direction: "right", y:15, color:"#fff", flip:true});
+				$("#baubleMini2").bauble({align: "right", direction: "right", y:15, z:1});
+				
+				
+				$("#addIcon").createIcon({title:"test.png", customIcon:"custom"});
+				$("#addIcon").createIcon({title:"test.png"});
+				$("#addIcon").createIcon({title:"test.php"});
+				$("#addIcon").createIcon({title:"test.mp3"});
+				
+				$("#addDialogue").click(function()
+				{
+					$("#addDialogue").createDialog({title:"Title", content:"Any content here, also HTML"});
+				});
+				
+				//---------------------------------------------------------------------------------------------
+				$("#projectbox").projectBox({title:"title", content:"this is a projectbox"});
+				//--------------------------------------------------------------
+				
+				$("#createLine").click(function(){
+					var rot = Math.floor((Math.random()*360)+1); 
+					var l 	= Math.floor((Math.random()*100)+25); 
+					$("#line").line({eRot: rot,length:l,speed:1});
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<div id="wrapper">
+			<h3 class="ui-dialog-titlebar">DOWNLOAD:</h3>
+			<ul class="display">
+				<li>
+					<a href="base-plugin.zip">Link to the Base Plugin (zip)</a>
+				</li>
+				<li>
+					This plugin enhances jQuery with a long range of extras, but most importantly it does
+					this without keeping you out of the loop. The slider plugin does NOT create any wrapping
+					boxes, nor does it append odd code to your existing code. Provide a wrapper for the slider
+					and it's more than happy to use that! Same goes for the dialogue plugin. You hand it a DIV
+					and it turns it into a dialogue. It doesn't take an existing DIV, creating less overhead.<br />
+					When this is said and done the Base Plugin has the option of adding elements to yours. Like
+					an overview or buttons for control. This is entirely optional. Everything in this plugin can
+					be custom styled.
+				</li>
+				<li>
+					Hold ctrl down and click on an element below to get more information and source code.
+				</li>
+				<li>
+					This library supports the GSAP TweenMax animation library from <a href="http://www.greensock.com" target="_blank">Greensock</a>*
+					and will use it instead of jquery automatically if imported.<br /><br />
+					*I am in no way affiliated with Greensock, I do however really like the library; Check it out :)
+				</li>
+			</ul>
+			
+			<h3 class="ui-dialog-titlebar">rSlider Examples:</h3>
+			<ul class="display">
+					The slider plugin turns any compatible element collection into a slide container. <br />
+				<li>
+					<div id="test" class="scrollWrapper">
+						<div class="scroller">
+							<div class="container">1</div>
+							<div class="container">2</div>
+							<div class="container">3</div>
+							<div class="container">4</div>
+							<div class="container">5</div>
+						</div>
+					</div>
+					<button id="testLeft" class="ui-button ui-state-default ui-corner-all"><</button>
+					No extra options, just a slider.
+					<button id="testRight" class="ui-button ui-state-default ui-corner-all rightie">></button>
+					<div class="example-code">
+						//run this part once<br />
+						$("#test").rSlide({});<br /><br />
+						//go right<br />
+						$("#test").rSlide({direction:"right"});<br />
+						//go left<br />
+						$("#test").rSlide({direction:"left"});
+					</div>
+				</li>	
+				<li>
+					<div id="test1" class="scrollWrapper">
+						<div class="scroller">
+							<div class="container">1</div>
+							<div class="container">2</div>
+							<div class="container">3</div>
+							<div class="container">4</div>
+							<div class="container">5</div>
+						</div>
+					</div>
+					<button id="testLeft1" class="ui-button ui-state-default ui-corner-all"><</button>
+					endBack:true,backspeed:1500
+					<button id="testRight1" class="ui-button ui-state-default ui-corner-all rightie">></button>
+					<div class="example-code">
+						//run this part once<br />
+						$("#test").rSlide({endBack:true, backSpeed:1500});<br /><br />
+						//go right<br />
+						$("#test").rSlide({direction:"right"});<br />
+						//go left<br />
+						$("#test").rSlide({direction:"left"});
+					</div>
+				</li>	
+				<li>
+					<div id="test2" class="scrollWrapper">
+						<div class="scroller">
+							<div class="container smaller">1</div>
+							<div class="container">2</div>
+							<div class="container small">3</div>
+							<div class="container">4</div>
+							<div class="container">5</div>
+						</div>
+					</div>
+					<button id="testLeft2" class="ui-button ui-state-default ui-corner-all"><</button>
+					Odd Sized Containers, Trim
+					<button id="testRight2" class="ui-button ui-state-default ui-corner-all rightie">></button>
+					<div class="example-code">
+						//run this part once<br />
+						$("#test").rSlide({trim:true});<br /><br />
+						//go right<br />
+						$("#test").rSlide({direction:"right"});<br />
+						//go left<br />
+						$("#test").rSlide({direction:"left"});
+					</div>
+				</li>
+				<li>
+					<div id="test4" class="scrollWrapper wider">
+						<div class="scroller">
+							<div class="container">1</div>
+							<div class="container">2</div>
+							<div class="container">3</div>
+							<div class="container">4</div>
+							<div class="container">5</div>
+						</div>
+					</div>
+					<button id="testLeft4" class="ui-button ui-state-default ui-corner-all"><</button>
+					Odd Sized Wrapper
+					<button id="testRight4" class="ui-button ui-state-default ui-corner-all rightie">></button>
+					<div class="example-code">
+						//Nothing special here, the wrapper is simply larger in the CSS<br />
+						//go right<br />
+						$("#test").rSlide({direction:"right"});<br />
+						//go left<br />
+						$("#test").rSlide({direction:"left"});
+					</div>
+				</li>
+				<li>
+					<div id="test5" class="scrollWrapper marginSpace">
+						<div class="scroller">
+							<div class="container xtra-margin-half">1</div>
+							<div class="container xtra-margin">2</div>
+							<div class="container small xtra-margin">3</div>
+							<div class="container small xtra-margin">4</div>
+							<div class="container xtra-margin">5</div>
+						</div>
+					</div>
+					<button id="testLeft5" class="ui-button ui-state-default ui-corner-all"><</button>
+					Easing, margin, Speed
+					<button id="testRight5" class="ui-button ui-state-default ui-corner-all rightie">></button>
+					<div class="example-code">
+						//Remember to use greensock easing if it is loaded, if not, use jQuery easings<br />
+						//run this part once<br />
+						$("#test").rSlide({{speed:800, easing:"easeOutCubic"});<br /><br />
+						//go right<br />
+						$("#test5").rSlide(direction:"right"});<br />
+						//go left<br />
+						$("#test5").rSlide({direction:"left"});<br />
+					</div>
+				</li>	
+				<li>
+					<div id="test3" class="scrollWrapper super-wide">
+						<div class="scroller">
+							<div class="container">1</div>
+							<div class="container">2</div>
+							<div class="container">3</div>
+							<div class="container">4</div>
+							<div class="container">5</div>
+						</div>
+					</div>
+					overview, arrows, arrowfade
+					<div class="example-code">
+						//run this part once<br />
+						$("#test").rSlide({overview:true,arrows:true, arrowFade: true});<br /><br />
+					</div>
+				</li>
+				<li class="documentation">
+					<h3 class="docHeader">Documentation: </h3>
+					
+					<h4>Main Method</h4>
+					<p class="bold">$(selector).rSlide({methods});</p>
+					rSlide will use a try/catch and use TweenMax from Greensock if applicable, if not it will
+					revert to jQuery animations.
+					<h4>Single Use Methods</h4>
+					<p>Each of these methods are stored in the data set and does not need to be re-set.
+					You can access the data with $(element).data("slideData").method<br />
+					$(element).data("slideData").counter is especially usefull since it holds the current page number.</p>
+					<ul class="display doc">
+						<li>
+							<h4>Gettables</h4>
+							<p>
+								Any parameter that is set in rSlide() is saved in the elements data
+								attribute. There are some internal variables that are saved as well:
+							</p>
+							<p class="bold">$(element).data("slideData").counter</p>
+							<p>
+								Returns the current slide index.
+							</p>
+							<p class="bold">$(element).data("slideData").childrenLength</p>
+							<p>
+								Gets the the amount of containers in the sliders using .length in-code.
+								you may have to deduct 1 from this method to get a 0 indexed number.
+							</p>
+						</li>
+						<li>
+							<h4>Trim</h4>
+							<p class="bold">trim: true</p>
+							<p>This method trims the content container to fit the containers exactly.
+							It is sort of a useless ability, but may be useful on some rare cases.
+							Please note that this action cannot be reverted via the plugin. If trim
+							is retrieved from the data set, and has been set - it will just return true.
+							If not it will return undefined or null.</p>
+						</li>
+						<li>
+							<h4>endBack</h4>
+							<p class="bold">endBack: true</p>
+							<p>This method makes the content slider go back to first slide when the
+							user attempts to scroll past the last content container.</p>
+							<p class="bold">endBackSpeed: int</p>
+							This method holds an integer that controls at which speed the scroller
+							will go back at when using endBackSpeed.</p> 
+						</li>
+						<li>
+							<h4>overview</h4>
+							<p class="bold">overview: true</p>
+							<p>This method adds an overview. Setting this to false will <b>remove</b> the overview</p>
+							<p class="bold">overviewClass: "string"</p>
+							<p>This method sets the class to the Ul controling the overview. Default is "overviewUl"</p>
+							<p class="bold">overviewLiClass: "string"</p>
+							<p>This method sets the class to the Li's controling the overview. Default is "overviewLI"</p>
+							<p class="bold">overviewAddTo: jQuery object or string</p>
+							<p>This method adds the overview to the object instead of the slider's parent. Default is undefined (parent)</p>
+						</li>
+						<li>
+							<h4>arrows</h4>
+							<p class="bold">arrows: true</p>
+							<p>This method adds an overview. Setting this to false will <b>remove</b> both arrows and unlink fading</p>
+							<p class="bold">arrowsClass: "string"</p>
+							<p>This method sets the class to the Ul controling the overview. Default is "overviewUl"</p>
+							<p class="bold">arrowsLeftClass: "string"</p>
+							<p>This method sets the class of the left button.</p>
+							<p class="bold">arrowsRightClass: "string"</p>
+							<p>This method sets the class of the right button.</p>
+							<p class="bold">arrowAddTo: jQuery object or string</p>
+							<p>This method adds the arrows to the object instead of the slider's parent. Default is undefined (parent)</p>
+							<p class="bold">arrowsFade: true</p>
+							<p>makes the appropriate arrow fade out when there's nothing more to slide to</p>
+						</li>
+						<li>
+							<h4>includeMargin</h4>
+							<p class="bold">includeMargin: true</p>
+							<p>This method makes the slider respect margins.</p>
+						</li>
+						<li>
+							<h4>easing</h4>
+							<p class="bold">easing: string</p>
+							<p>Changes the easing method from "swing" to whatever is defined in the string.
+							Remember to use appropriate easings; Greensock uses Circ.easeIn and jQuery uses
+							easeInCirc</p>
+						</li>
+						<li>
+							<h4>speed</h4>
+							<p class="bold">speed: int</p>
+							<p>Sets the speed in <b>miliseconds</b> at which the slider will slide.</p>
+						</li>
+					</ul>
+					<h4>Methods</h4>
+					<ul class="display doc">
+						<li>
+							<h4>direction</h4>
+							<p class="bold">direction: "right"</p>
+							<p class="bold">direction: "left"</p>
+							<p>This method makes the slider slide in the desired direction</p>
+						</li>
+						<li>
+							<h4>goTo</h4>
+							<p class="bold">goTo: int</p>
+							<p>This method makes the slider go to a specific page - it is 0-indexed.</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Bauble Examples:</h3>
+			<ul class="display">
+				<li>
+					<div id="baubleTop" class="bauble"></div>
+					<p>Arrow Top</p>
+					<div class="example-code">
+						//Add an arrow<br />
+						$("#element").bauble({x:18,direction: "top", align: "top"});
+					</div>
+				</li>
+				<li>
+					<div id="baubleRight" class="bauble"></div>
+					<p>Arrow Right</p>
+					<div class="example-code">
+						//Add an arrow<br />
+						$("#element").bauble({align: "right", direction: "right"});
+					</div>
+				</li>
+				<li>
+					<div id="baubleBot" class="bauble"></div>
+					<p>Arrow Bottom</p>
+					<div class="example-code">
+						//Add an arrow (bottom is default)<br />
+						$("#element").bauble({x:18});
+					</div>
+				</li>
+				<li>
+					<div id="baubleLeft" class="bauble"></div>
+					<p>Arrow Left</p>
+					<div class="example-code">
+						//Add an arrow<br />
+						$("#element").bauble({y:18,direction: "left", align: "left"});
+					</div>
+				</li>
+				<li>
+					<div id="baubleInvert" class="bauble"></div>
+					<p>Arrow top, right, bot, left<br />Flipped, X/Y Modified</p>
+					<div class="example-code">
+						//Add inverted arrows<br />
+						$("#element").bauble({direction: "bottom", align: "top", color:"#fff", x:75, flip: true});<br />
+						$("#element").bauble({direction: "left", align: "right", color:"#fff", y:50, flip: true});<br />
+						$("#element").bauble({direction: "top", align: "bottom", color:"#fff", x:75, flip: true});<br />
+						$("#element").bauble({direction: "right", align: "left", color:"#fff", y:50, flip: true});
+					</div>
+				</li>
+				<li>
+					<div id="baublePerm" class="bauble"></div>
+					<p>Permanent False</p>
+					<div class="example-code">
+						//Add an arrow<br />
+					</div>
+				</li>
+				<li>
+					<ul id="baubleList">
+						<li>
+							<div id="baubleMini2" class="baubleMini"></div>
+						</li>
+						<li>
+							<div id="baubleMini1" class="baubleMini"></div>
+						</li>
+					</ul>
+					<p>2x Arrow, Z-index modified </p>
+					<div class="example-code">
+						//Add interlocking arrows<br />
+						$("#element").bauble({align: "left", direction: "right", y:15, color:"#fff", flip:true});<br />
+						$("#element").bauble({align: "right", direction: "right", y:15, z:1});
+					</div>
+				</li>
+				<li class="documentation">
+					<h3 class="docHeader">Documentation: </h3>
+					
+					<h4>Main Method</h4>
+					<p class="bold">$(selector).bauble({methods});</p>
+					The bauble will append an element to the parent. It can be called as many times as desired. The parent
+					will be set as position: relative!
+					
+					<h4>Methods</h4>
+					<ul class="display doc">
+						<li>
+							<h4>align</h4>
+							<p class="bold">align: "top"</p>
+							<p class="bold">align: "right"</p>
+							<p class="bold">align: "bottom"</p>
+							<p class="bold">align: "left"</p>
+							<p>This sets the bauble alignment to whatever is chosen. Default is "bottom"</p>
+						</li>
+						<li>
+							<h4>align2</h4>
+							<p class="bold">align2: "top"</p>
+							<p class="bold">align2: "right"</p>
+							<p class="bold">align2: "bottom"</p>
+							<p class="bold">align2: "left"</p>
+							<p>This sets the bauble alignment to whatever is chosen. This alignment is appended
+							to align. This allows for combinations like: "bottom, left". It is not required.</p>
+						</li>
+						<li>
+							<h4>x,y,z</h4>
+							<p class="bold">x: int</p>
+							<p class="bold">y: int</p>
+							<p class="bold">z: int</p>
+							<p>x and y offsets the bauble after normal css values. z sets the z-index.</p>
+						</li>
+						<li>
+							<h4>size</h4>
+							<p class="bold">size: int</p>
+							<p>Sets the size of the bauble.</p>
+						</li>
+						<li>
+							<h4>color</h4>
+							<p class="bold">color: hexadecimal string</p>
+							<p>Sets the color of the bauble, usual CSS values here like: #ffffff.</p>
+						</li>
+						<li>
+							<h4>flip</h4>
+							<p class="bold">flip: true</p>
+							<p>Flips the bauble's local orientation.</p>
+						</li>
+						<li>
+							<h4>permanent</h4>
+							<p class="bold">permanent: boolean</p>
+							<p>If true the bauble will always be visible, if not it will only be visible on parent hover.
+							default is true.</p>
+						</li>
+						<li>
+							<h4>objId</h4>
+							<p class="bold">objId: string</p>
+							<p>Gives the bauble an ID.</p>
+						</li>
+						<li>
+							<h4>objClass</h4>
+							<p class="bold">objClass: string</p>
+							<p>Gives the bauble a class.</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Icon Examples:</h3>
+			<ul class="display">
+				<li>
+					<div id="addIcon"></div>
+					<div class="example-code">
+						//Add icons<br />
+						$("#element").createIcon({title:"test.png", customIcon:"custom"});<br />
+						$("#element").createIcon({title:"test.png"});<br />
+						$("#element").createIcon({title:"test.php"});<br />
+						$("#element").createIcon({title:"test.mp3"});
+					</div>
+				</li>
+				<li class="documentation">
+					<h3 class="docHeader">Documentation: </h3>
+					
+					<h4>Main Method</h4>
+					<p class="bold">$(selector).createIcon({methods});</p>
+					The icon is appended to the parent. It can be called as many times as desired. The parent
+					will be set as position: relative!
+					
+					<h4>Methods</h4>
+					<ul class="display doc">
+						<li>
+							<h4>title</h4>
+							<p class="bold">title: "top"</p>
+							<p>This sets the title (name) of the icon and serves to determine filetype.
+							Default is "file.misc"</p>
+						</li>
+						<li>
+							<h4>imgDir</h4>
+							<p class="bold">imgDir: path string</p>
+							<p>This sets the path to the folder containing the image-icons, default is "images/icon/".</p>
+						</li>
+						<li>
+							<h4>customIcon</h4>
+							<p class="bold">customIcon: path string</p>
+							<p>This overrides the normal filetype check and sets a custom icon image</p>
+						</li>
+						<li>
+							<h4>objId</h4>
+							<p class="bold">objId: string</p>
+							<p>Gives the icon an ID.</p>
+						</li>
+						<li>
+							<h4>objClass</h4>
+							<p class="bold">objClass: string</p>
+							<p>Gives the icon a class.</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Dialogue Popup:</h3>
+			<ul class="display">
+				<li>
+					<button id="addDialogue">Add Dialogue</button>
+					<div class="example-code">
+						//Add a solo dialogue<br />
+						$("#element").createDialog({title:"Title", content:"Any content here, also HTML"});
+					</div>
+				</li>
+				<li class="documentation">
+					<h3 class="docHeader">Documentation: </h3>
+					
+					<h4>Main Method</h4>
+					<p class="bold">$(selector).createDialog({methods});</p>
+					Appends a dialog to the parent.
+					
+					<h4>Methods</h4>
+					<ul class="display doc">
+						<li>
+							<h4>title</h4>
+							<p class="bold">title: "top"</p>
+							<p>This sets the title (name) of the icon and serves to determine filetype.
+							default is "title"</p>
+						</li>
+						<li>
+							<h4>content</h4>
+							<p class="bold">content: html</p>
+							<p>Fills out the content of the dialog with html.</p>
+						</li>
+						<li>
+							<h4>customIcon</h4>
+							<p class="bold">customIcon: path string</p>
+							<p>This overrides the normal filetype check and sets a custom icon image</p>
+						</li>
+						<li>
+							<h4>objId</h4>
+							<p class="bold">objId: string</p>
+							<p>Gives the dialog an ID.</p>
+						</li>
+						<li>
+							<h4>objClass</h4>
+							<p class="bold">objClass: string</p>
+							<p>Gives the dialog a class.</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>ProjectBox:</h3>
+			<ul class="display">
+				<li>
+					<div id="projectbox"></div>
+				</li>
+				<li class="documentation">
+					<h3 class="docHeader">Documentation: </h3>
+					
+					<h4>Main Method</h4>
+					<p class="bold">$(selector).projectBox({methods});</p>
+					Appends a Project Box to the parent.
+					
+					<h4>Methods</h4>
+					<ul class="display doc">
+						<li>
+							<h4>title</h4>
+							<p class="bold">title: "top"</p>
+							<p>This sets the title (name) of the icon and serves to determine filetype.
+							default is "title"</p>
+						</li>
+						<li>
+							<h4>content</h4>
+							<p class="bold">content: html</p>
+							<p>Fills out the content of the dialog box with html.</p>
+						</li>
+						<li>
+							<h4>image</h4>
+							<p class="bold">image: path string</p>
+							<p>overrides the default "images/placeholder.png" to a custom image path</p>
+						</li>
+						<li>
+							<h4>objId</h4>
+							<p class="bold">objId: string</p>
+							<p>Gives the projectbox an ID.</p>
+						</li>
+						<li>
+							<h4>objClass</h4>
+							<p class="bold">objClass: string</p>
+							<p>Gives the projectbox a class.</p>
+						</li>
+						<li>
+							<h4>width</h4>
+							<p class="bold">width: number</p>
+							<p>Specifies the width of the box</p>
+						</li>
+						<li>
+							<h4>height</h4>
+							<p class="bold">height: number</p>
+							<p>Specifies the height of the box</p>
+						</li>
+						<li>
+							<h4>bar color</h4>
+							<p class="bold">barColor: hexadecimal colour code</p>
+							<p>specifies the bar color</p>
+						</li>
+						<li>
+							<h4>bar height</h4>
+							<p class="bold">barHeight: number</p>
+							<p>Specifies the height of the bar</p>
+						</li>
+							<h4>title color</h4>
+							<p class="bold">titleColor: hexadecimal colour code</p>
+							<p>specifies the title text color</p>
+						</li>
+						<li>
+							<h4>content font size</h4>
+							<p class="bold">contentFontSize: number</p>
+							<p>Specifies the height of the bar</p>
+						</li>
+						<li>
+							<h4>content font colour</h4>
+							<p class="bold">contentColor: hexadecimal colour code</p>
+							<p>specifies the content font color</p>
+						</li>
+						<li>
+							<h4>background colour</h4>
+							<p class="bold">bgColor: hexadecimal colour code</p>
+							<p>specifies the bar color</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Line (REQUIRES GREENSOCK LIBRARY):</h3>
+			<ul class="display">
+				<li class="wideDisplay">
+					<button id="createLine" class="ui-button ui-state-default ui-corner-all">Create</button>
+					<div id="line"></div>
+					<div class="example-code">
+						//Add line<br />
+						$("#element").line({eRot: 0, length: 100});
+					</div>
+				</li>
+				<li class="documentation">
+					<h3 class="docHeader">Documentation: </h3>
+					
+					<h4>Main Method</h4>
+					<p class="bold">$(selector).line({methods});</p>
+					Appends a line to it's parent.
+					
+					<h4>Methods</h4>
+					<ul class="display doc">
+						<li>
+							<h4>eRot</h4>
+							<p class="bold">eRot: degrees</p>
+							<p>Sets the rotational value of the line, keep it in mind if you want to animate it</p>
+						</li>
+						<li>
+							<h4>length</h4>
+							<p class="bold">length: number</p>
+							<p>Length of the line - plain and simple</p>
+						</li>
+						<li>
+							<h4>thickness</h4>
+							<p class="bold">thicnkess: number</p>
+							<p>thickness of the line - plain and simple</p>
+						</li>
+						<li>
+							<h4>speed</h4>
+							<p class="bold">speed: number</p>
+							<p>animates the line in "speed" seconds - default is undefined (0).</p>
+						</li>
+						<li>
+							<h4>delay</h4>
+							<p class="bold">delay: number (seconds)</p>
+							<p>Delays the animation if activated</p>
+						</li>
+						<li>
+							<h4>lineClass</h4>
+							<p class="bold">lineClass: css class</p>
+							<p>You don't like the black line? Replace with your own class! :)</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB">
+	<head>
+		<title>Rosefalk.dk jQuery Base Plugin</title>
+		<meta http-equiv="Content-Type" content="text/xhtml; charset= iso-8859-1" />
+		<meta name="description" content="base library" />
+		<meta name="keywords" content="rosefalk, rosefalk.dk, jquery, base, library" />
+		<link type="text/css" rel="stylesheet" href="css/ui-smoothness/jquery-ui-1.8.214.css" />
+		<link type="text/css" rel="stylesheet" href="css/bauble.css" />
+		
+		<script type="text/javascript" src="javascript/jquery/jquery-1.7.2.min.js"></script>
+  		<script type="text/javascript" src="javascript/jquery/jquery-ui-1.8.21.min.js"></script>
+  		<script type="text/javascript" src="javascript/jquery/jquery-base.1.0.6.js"></script>
+  		<script type="text/javascript" src="javascript/jquery/ScrollToPlugin.min.js"></script>
+		
+		<style type="text/css">
+			#slider
+			{
+				width: 500px;
+				height: 250px;
+				overflow: hidden;
+			}
+			.scroller
+			{
+				width: 5000px;
+				height: 250px;
+			}
+			.container
+			{
+				width: 500px;
+				height: 250px;
+				float: left;
+				background-color: #abc;
+				color: #fff;
+				font-size: 30px;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			//no need to isntanciate the slider unless you're passing parameters, this is done automatically.
+			$("document").ready(function()
+			{	
+				$("#slideLeft").bind('click', function()
+				{
+					//go left
+					$("#slider").rSlide({direction:"left"});
+				});
+				
+				$("#slideRight").bind('click', function()
+				{
+					//go right
+					$("#slider").rSlide({direction:"right"});
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="slider">
+				<div class="scroller">
+					<div class="container">1</div>
+					<div class="container">2</div>
+					<div class="container">3</div>
+					<div class="container">4</div>
+					<div class="container">5</div>
+				</div>
+			</div>
+			<button id="slideLeft" class="ui-button ui-state-default ui-corner-all"><</button>
+			<button id="slideRight" class="ui-button ui-state-default ui-corner-all rightie">></button>
+		</div>
+	</body>
+</html>
