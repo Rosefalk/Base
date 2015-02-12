@@ -1,6 +1,8 @@
 # Base
 jQuery plugin that contains different interaction and information elements
 
+- You will need to include jquery-base.x.x.x.js and bauble.js
+
 Base is a non markup specific jQuery plugin somewhat reminiscent of jQueryUI.
 
 For example rSlide, which is a part of Base, doesn't care if you make a collection of divs or have everything in a list.
